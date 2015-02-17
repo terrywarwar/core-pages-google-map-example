@@ -1,0 +1,120 @@
+<!--
+  Copyright (c) 2015, <your name>. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/paper_elements/roboto.html">
+<link rel="import" href="../../packages/core_elements/core_image.html">
+<link rel="import" href="../../packages/core_elements/core_icons.html">
+<link rel="import" href="../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../packages/core_elements/core_media_query.html">
+<link rel="import" href="../../packages/core_elements/core_menu.html">
+<link rel="import" href="../../packages/core_elements/core_submenu.html">
+<link rel="import" href="../../packages/core_elements/core_item.html">
+<link rel="import" href="../../packages/core_elements/core_label.html">
+<link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_checkbox.html">
+<link rel="import" href="../../packages/core_elements/image_icons.html">
+<link rel="import" href="../../packages/core_elements/maps_icons.html">
+<link rel="import" href="../../packages/core_elements/core_scroll_header_panel.html">
+
+<link rel="import" href="../../packages/paper_elements/paper_input.html">
+<link rel="import" href="../../packages/core_elements/core_drawer_panel.html">
+<link rel="import" href="../../packages/paper_elements/paper_toggle_button.html">
+
+<polymer-element name="home-view">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+
+            html, body {
+                height: 100%;
+            }
+
+            body {
+                font-family: sans-serif;
+                color: #FFF;
+                margin: 0;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            }
+
+            [drawer] {
+                background-color: #f5f5f5;
+                border-right: 1px solid #ccc;
+            }
+
+            [main] {
+                /*background-color: #4F7DC9;*/
+            }
+
+            button {
+                width: 160px;
+                height: 40px;
+                font-size: 16px;
+                margin: 8px;
+            }
+
+            #mapView {
+                height: 100%;
+
+            }
+
+            [core-toolbar] {
+                color: #ffffff;
+            }
+
+            core-submenu::shadow #submenu {
+                /*margin-left: 10px;*/
+            }
+            paper-checkbox {
+                padding-right: 10px;;
+            }
+
+            core-scroll-header-panel {
+                height: 100%;
+            }
+        </style>
+
+
+        <core-drawer-panel id="drawerPanel">
+            <div drawer>
+                <core-toolbar style="background: #4285f4;">
+                    <h4>Example</h4>
+                </core-toolbar>
+                <core-scroll-header-panel>
+
+                    <div content><core-menu selected="0">
+                        <core-item label="Home" icon="home"></core-item>
+                        <core-item label="Map" icon="settings">
+                          <a href="#/map"></a>
+                        </core-item>
+                    </core-menu></div>
+                </core-scroll-header-panel>
+
+
+            </div>
+
+            <div main>
+                <core-toolbar style="background: #4285f4;">
+                    <paper-icon-button core-drawer-toggle icon="menu"></paper-icon-button>
+                    <span flex>Home</span>
+                    <paper-icon-button icon="refresh"></paper-icon-button>
+                    <paper-icon-button icon="more-vert"></paper-icon-button>
+                </core-toolbar>
+
+            </div>
+
+        </core-drawer-panel>
+
+
+    </template>
+    <script type="application/dart" src="home_view.dart"></script>
+</polymer-element>
