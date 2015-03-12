@@ -1,0 +1,41 @@
+
+
+
+<polymer-element name="main-app">
+    <template>
+        <style>
+            :host {
+                display: block;
+                height: 100%;
+            }
+
+            html, body {
+                height: 100%;
+            }
+
+            body {
+                font-family: sans-serif;
+                color: #FFF;
+                margin: 0;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            }
+            #pages{
+                height: 100%;
+            }
+
+        </style>
+
+
+     <core-pages id="pages" selected="0" flex>
+<section><home-view></home-view></section>
+<section><map-view></map-view></section>
+ 
+</core-pages>
+
+
+    </template>
+</polymer-element>

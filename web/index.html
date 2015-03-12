@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 
-<!--
-  Copyright (c) 2015, <your name>. All rights reserved. Use of this source code
-  is governed by a BSD-style license that can be found in the LICENSE file.
--->
 
 <html>
 <head>
@@ -29,29 +25,44 @@
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#3372DF">
 
-    <!-- example of using a paper element -->
-    <link rel="import" href="packages/paper_elements/roboto.html">
 
     <!--  own custom element -->
-    <link rel="import" href="packages/core_elements/core_pages.html">
-    <link rel="import" href="packages/polymer_example/home_view.html">
-    <link rel="import" href="packages/polymer_example/map_view.html">
+    <!--<link rel="import" href="packages/dart_ami/main_app.html">-->
+    <!--<link rel="import" href="packages/core_elements/core_pages.html">
+    <link rel="import" href="packages/cpl_ami/home_view.html">
+    <link rel="import" href="packages/cpl_ami/map_view.html">-->
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body unresolved fullbleed layout>
+<!--<div id="mainContent"></div>-->
+
+<main-app>
+</main-app>
+
+<!--<core-pages id="pages" selected="0" flex>
+   <home-view></home-view>
+  <map-view></map-view>
+</core-pages>-->
 
 
-<core-pages id="pages" selected="0" flex>
-    <home-view></home-view>
-    <map-view></map-view>
-</core-pages>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <!--<script type="application/dart">export 'package:polymer/init.dart';</script>-->
-<script type="application/dart" src="main.dart"></script>
+<!--<script type="application/dart" src="main.dart"></script>-->
+
+<script type="application/dart">
+  // Note: This import is necessary even though its not being used directly. It
+  // contains @CustomTag, @HtmlImport, and other Initializer annotations which
+  // bootstrap the application. The dartdoc comment below gets rid of the unused
+  // import warning because it refers to the ExampleApp class in this import.
+  import 'package:demo/main_app.dart';
+  import 'package:polymer/polymer.dart';
+  /// Registers the custom-element [MainApp] and all its dependencies.
+  main() => initPolymer();
+</script>
+
 <script src="packages/browser/dart.js"></script>
 </body>
 </html>

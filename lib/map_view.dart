@@ -1,5 +1,5 @@
-// Copyright (c) 2015, <your name>. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+@HtmlImport('map_view.html')
+library demo.map_view;
 
 import 'dart:html';
 
@@ -16,15 +16,7 @@ class MapView extends PolymerElement {
 
   /// Constructor used to create instance of MainApp.
   MapView.created() : super.created(){
-    centre = new LatLng(-34.397, 150.644);
-    final mapOptions = new MapOptions()
-      ..zoom = 8
-      ..center = centre
-      ..mapTypeId = MapTypeId.ROADMAP
-    ;
-    var mapView = $['mapView'] as DivElement;
-    map = new GMap(mapView, mapOptions);
-
+    
   }
 
 
@@ -43,7 +35,7 @@ class MapView extends PolymerElement {
     // this allow to notify the map that the size of the canvas has changed.
     // in some cases, the map behaves like it has a 0*0 size.
     event.trigger(map, 'resize', []);
-    map.center = centre;
+    map.center = map.center;
     map.panTo(centre);
   }
 
@@ -61,12 +53,20 @@ class MapView extends PolymerElement {
 //    super.attributeChanges(name, oldValue, newValue);
 //  }
 
-//  /// Called when main-app has been fully prepared (Shadow DOM created,
-//  /// property observers set up, event listeners attached).
-//  ready() {
-//
-//
-//  }
+  /// Called when main-app has been fully prepared (Shadow DOM created,
+  /// property observers set up, event listeners attached).
+  ready() {
+    centre = new LatLng(-34.397, 150.644);
+        final mapOptions = new MapOptions()
+          ..zoom = 8
+          ..center = centre
+          ..mapTypeId = MapTypeId.ROADMAP
+        ;
+        var mapView = $['mapView'] as DivElement;
+        map = new GMap(mapView, mapOptions);
+
+
+  }
 //
 //  domReady(){
 //    super.domReady();

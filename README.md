@@ -1,10 +1,8 @@
-# {{ projectName }}
 
 A starter template for a polymer.dart web app.
 
-## Creating new elements
+## Demo project to show issue
 
-The `polymer` package includes a utility to generate new elements. From
-within this project, run:
+Demo project to show issue.
 
-`pub run polymer:new_element <name>`
+
